@@ -3,7 +3,6 @@
 Defining an empty class Rectangle
 """
 
-
 Class Rectangle:
     """Empty representation of a Rectangle"""
     pass
