@@ -3,7 +3,6 @@
 '''
 
 
-
 class BaseGeometry:
     '''Class BaseGeometry
     '''
