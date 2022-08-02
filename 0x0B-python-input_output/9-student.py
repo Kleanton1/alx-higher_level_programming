@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-'''
-Defines the class "Student"
-'''
+"""Contains the class "Student"""
 
 
 class Student:
