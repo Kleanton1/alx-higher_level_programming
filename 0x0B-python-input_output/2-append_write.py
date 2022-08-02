@@ -1,0 +1,9 @@
+#!/usr/bin/python3
+'''Defining append_write function
+'''
+
+
+def append_write(filename="", text=""):
+    '''appends filename with utf-8'''
+    with open(filename, 'a', encding="utf-8") as f:
+        return f.write(text)
