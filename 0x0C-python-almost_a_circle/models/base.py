@@ -67,7 +67,7 @@ class Base:
         '''Creates a new instance of Square, Rectangle based on dictionary
 
          Args:
-            dictionary (dict): A dictionary containing values to set to instance
+        dictionary (dict): A dictionary containing values to set to instance
          '''
         if cls.__name__ == "Square":
             my_square = cls(1)
