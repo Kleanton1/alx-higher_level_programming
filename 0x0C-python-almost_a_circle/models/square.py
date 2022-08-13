@@ -19,26 +19,26 @@ class Square(Rectangle):
         '''
         super().__init__(size, size, x, y, id)
 
-     def __str__(self):
-         '''Return string representation of a square object
-         '''
-         return(f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}")
+    def __str__(self):
+        '''Return string representation of a square object
+        '''
+        return(f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}")
 
-      @property
-      def size(self):
-          '''Getter for the size of square instance
-          '''
-          return self.width
+    @property
+    def size(self):
+        '''Getter for the size of square instance
+        '''
+        return self.width
 
-      @size.setter
-      def size(self, size):
-          '''Setter for size of square object
+    @size.setter
+    def size(self, size):
+        '''Setter for size of square object
 
-           Args:
-              size (int): The size to be set for square object
-           '''
-          self.width = size
-          self.height = size
+        Args:
+           size (int): The size to be set for square object
+        '''
+        self.width = size
+        self.height = size
 
     def update(self, *args, **kwargs):
         '''Updates the instance attribute values with the values specified
@@ -77,4 +77,4 @@ class Square(Rectangle):
                 return value
 
         return {remove_prefix(key): self.__dict__[key] for key in
-                                self.__dict__.keys()}
+                self.__dict__.keys()}
