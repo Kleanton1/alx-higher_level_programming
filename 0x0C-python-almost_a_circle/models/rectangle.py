@@ -51,93 +51,95 @@ class Rectangle(Base):
             '''
             return self.__height
 
-         @height.setter
-         def height(self, height):
-             '''Setter for heigth attribute
-             '''
-             if type(height) != int:
-                 raise TypeError("height must be an integer")
-             elif height <= 0:
-                 raise ValueError("height must be > 0")
-             else:
-                 self.__height = height
+        @height.setter
+        def height(self, height):
+            '''Setter for heigth attribute
+            '''
+            if type(height) != int:
+                raise TypeError("height must be an integer")
+            elif height <= 0:
+                raise ValueError("height must be > 0")
+            else:
+                self.__height = height
 
-         @property
-         def x(self):
-             '''Getter for x attribute
-             '''
-             return self.__x
+                @property
+                def x(self):
+                    '''Getter for x attribute
+                    '''
+                    return self.__x
 
-            @x.setter
-            def x(self, x):
-                '''Setter for x attribute
-                '''
-                if type(x) != int:
-                    raise TypeError("x must be an integer")
-                elif x < 0:
-                    raise ValueError("x must be >= 0")
-                else:
-                    self.__x = x
+                @x.setter
+                def x(self, x):
+                    '''Setter for x attribute
+                    '''
+                    if type(x) != int:
+                        raise TypeError("x must be an integer")
+                    elif x < 0:
+                        raise ValueError("x must be >= 0")
+                    else:
+                        self.__x = x
 
-             @property
-             def y(self):
-                 '''Getter for y attribute
-                 '''
-                 return self.__y
+        @property
+        def y(self):
+            '''Getter for y attribute
+            '''
+            return self.__y
 
-              @y.setter
-              def y(self, y):
-                  '''Setter for y attribute
-                  '''
-                  if type(y) != int:
-                      raise TypeError("y must be an integer")
-                  elif y < 0:
-                      raise ValueError("y must be >= 0")
-                  else:
-                      self.__y = y
+        @y.setter
+        def y(self, y):
+            '''Setter for y attribute
+            '''
+            if type(y) != int:
+                raise TypeError("y must be an integer")
+            elif y < 0:
+                raise ValueError("y must be >= 0")
+            else:
+                self.__y = y
 
-            def area(self):
-                '''Returns the area of the rectangle instance
-                '''
-                return self.__height * self.__width
+        def area(self):
+            '''Returns the area of the rectangle instance
+            '''
+            return self.__height * self.__width
 
-            def display(self):
-                '''Prints out a pictoral representation of the Rectangle instance
-                '''
-                print("\n" * self.__y, end="")
-                for i in range(self.__height):
-                    print(" " * self.__x + "#" * self.__width)
+        def display(self):
+            '''Prints out a pictoral representation of the Rectangle instance
+            '''
+            print("\n" * self.__y, end="")
+            for i in range(self.__height):
+                print(" " * self.__x + "#" * self.__width)
 
-             def update(self, *args, **kwargs):
-                 '''sets the instance attributes accoring to the variables store in args
-                 if args exists kwargs id skipped
+        def update(self, *args, **kwargs):
+            '''sets the instance attributes accoring to the variables store /
+            args
+            if args exists kwargs id skipped
 
-                  Args:
-                     args (no_keyword argument):
-                        1st argument should be the id attribute
-                        2nd argument should be the width attribute
-                        3rd argument should be the height attribute
-                        4th argument should be the x attribute
-                        5th argument should be the y attribute
-                    kwargs (keyword arguments):
-                        All keys and values have corresponding attributes
-                 '''
-                 if len(args) > 0:
-                     attributes = ["id", "width", "height", "x", "y"]
-                     for i, attr in enumerate(args):
-                         setattr(self, attributes[i], attr)
-                     else:
-                         for key in kwargs.keys():
-                             setattr(self, key, kwargs[key])
+            Args:
+               args (no_keyword argument):
+                  1st argument should be the id attribute
+                  2nd argument should be the width attribute
+                  3rd argument should be the height attribute
+                  4th argument should be the x attribute
+                  5th argument should be the y attribute
+               kwargs (keyword arguments):
+                  All keys and values have corresponding attributes
+            '''
+            if len(args) > 0:
+                attributes = ["id", "width", "height", "x", "y"]
+                for i, attr in enumerate(args):
+                    setattr(self, attributes[i], attr)
+            else:
+                for key in kwargs.keys():
+                    setattr(self, key, kwargs[key])
 
             def to_dictionary(self):
                 '''returns the dictionary representation of a Rectangle object
                 '''
                 def remove_prefix(value):
-                    '''Converts private attribute format to normal attribute name
+                    '''Converts private attribute format to normal attribute /
+                    name
 
                     Args:
-                       value (str): The value to be converted
+                value (str): The value to be converted
                     '''
                     if value[:12] == "_Rectangle__":
                         return value[12:]
