@@ -1,2 +1,2 @@
--- Deletes db if exists
-DROP DATABASES IF EXISTS 'hbtn_0c_0';
+-- deletes the db hbtn_0c_0 in my MySQL server
+DROP DATABASE IF EXISTS 'hbtn_0c_0';
