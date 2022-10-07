@@ -1,8 +1,10 @@
 #!/usr/bin/python3
+
 ''' lists all states with a name starting with N (upper N)
-from the Db hbtn_0e_0_usa
+from the Database hbtn_0e_0_usa
 '''
-import MySqLdb
+
+import MySQLdb
 import sys
 
 if __name__ == "__main__":
