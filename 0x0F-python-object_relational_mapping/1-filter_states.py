@@ -5,7 +5,7 @@ from the Database hbtn_0e_0_usa
 '''
 
 import MySQLdb
-import sys
+import sys import argv
 
 if __name__ == "__main__":
     con = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
