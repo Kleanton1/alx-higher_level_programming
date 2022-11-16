@@ -1,15 +1,21 @@
 #!/usr/bin/node
 const request = require('request');
-const endpoint = process.argv[2];
-let count = 0;
+const url = process.argv[2];
+const wedge = 18;
 
-request(endpoint, (err, res, body) => {
-  if (err) throw err;
-
-  JSON.parse(body).results.forEach(result => {
-    result.characters.forEach(charaacter => {
-      if (character.endswith('18/')) count++;
-    });
-  });
-  console.log(count);
+request(url, function (err, response, body) {
+  if (err) {
+    console.log(err);
+  } else {
+    const data = JSON.parse(body).reults;
+    let count = 0;
+    for (const film of data) {
+      for (const character of film.characters) {
+        if (character.includes(wedge)) {
+          count++;
+        }
+      }
+    }
+    console.log(count);
+  }
 });
